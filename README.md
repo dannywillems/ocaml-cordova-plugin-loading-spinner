@@ -46,21 +46,16 @@ See the official documentation
 
 ## ! BE CAREFUL !
 
-The device plugin creates a new object called *spinnerplugin*, but the object is
+The device plugin creates a new object called *window.spinnerplugin*, but the object is
 available when the *deviceready* event is handled.
 
-We don't provide a *spinnerplugin* variable in this plugin (as said in the official
-documentation on js_of_ocaml). If we did, *spinnerplugin* will be set to **undefined**
-because the *spinnerplugin* javascript object doesn't exist when we create
-the variable.
-
-Instead, we provide a function *LoadingSpinner.t* of type unit ->
-LoadingSpinner.loading_spinner which does the binding when you call it.
-So, use
+Instead, we provide a function *Loading_spinner.t* of type unit ->
+Loading_spinner.loading_spinner which does the binding when you call it.
+So, use (with js_of_ocaml)
 
 ```OCaml
 let on_device_ready _ =
-  let l = LoadingSpinner.t () in
+  let l = Loading_spinner.t () in
   (* Some code *)
 
 let _ =

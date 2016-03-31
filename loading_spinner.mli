@@ -39,5 +39,5 @@ class loading_spinner : Ojs.t ->
 
 (* -------------------------------------------------------------------------- *)
 val t : unit -> loading_spinner
-[@@js.get "spinnerplugin"]
+[@@js.get "window.spinnerplugin"]
 (* -------------------------------------------------------------------------- *)
