@@ -33,21 +33,21 @@ See the official documentation
 
 ## ! BE CAREFUL !
 
-The device plugin creates a new object called *navigator.compass*, but the object is
+The device plugin creates a new object called *window.spinnerplugin*, but the object is
 available when the *deviceready* event is handled.
 
-We don't provide a *compass* variable in this plugin (as said in the official
-documentation on js_of_ocaml). If we did, *compass* will be set to **undefined**
-because the *navigator.compass* javascript object doesn't exist when we create
+We don't provide a *spinnerplugin* variable in this plugin (as said in the official
+documentation on js_of_ocaml). If we did, *spinnerplugin* will be set to **undefined**
+because the *navigator.spinnerplugin* javascript object doesn't exist when we create
 the variable.
 
-Instead, we provide a function *Compass.compass* of type unit -> Compass.compass
+Instead, we provide a function *Loading_spinner.loading_spinner* of type unit -> Loading_spinner.loading_spinner
 Js.t which does the binding when you call it.
 So, use
 
 ```OCaml
-let on_device_ready =
-  let c = Compass.compass () in
+let on_device_ready _ =
+  let c = Loading_spinner.loading_spinner () in
   (* Some code *)
 
 let _ =
