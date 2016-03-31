@@ -18,10 +18,7 @@ Source: [cordova-plugin-loading-spinner](https://github.com/mobimentum/phonegap-
 ## What does cordova-plugin-loading-spinner do ?
 
 ```
-This plugin provides access to the device's compass. The compass is a sensor
-that detects the direction or heading that the device is pointed, typically from
-the top of the device. It measures the heading in degrees from 0 to 359.99,
-where 0 is north.
+PhoneGap 3 plugin to show a loading spinner with optional dark overlay.
 ```
 
 Source: [cordova-plugin-loading-spinner](https://github.com/mobimentum/phonegap-plugin-loading-spinner)
