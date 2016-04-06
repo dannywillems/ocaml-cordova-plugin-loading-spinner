@@ -1,5 +1,7 @@
 # ocaml-cordova-plugin-loading-spinner
 
+* gen_js_api (master branch): [![Build Status](https://travis-ci.org/dannywillems/ocaml-cordova-plugin-loading-spinner.svg?branch=master)](https://travis-ci.org/dannywillems/ocaml-cordova-plugin-loading-spinner)
+
 Binding to
 [cordova-plugin-loading-spinner](https://github.com/mobimentum/phonegap-plugin-loading-spinner)
 
