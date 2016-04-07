@@ -70,13 +70,13 @@ See the official documentation
 The device plugin creates a new object called *window.spinnerplugin*, but the object is
 available when the *deviceready* event is handled.
 
-Instead, we provide a function *Loading_spinner.t* of type unit ->
-Loading_spinner.loading_spinner which does the binding when you call it.
+Instead, we provide a function *Cordova_loading_spinner.t* of type unit ->
+Cordova_loading_spinner.loading_spinner which does the binding when you call it.
 So, use (with js_of_ocaml)
 
 ```OCaml
 let on_device_ready _ =
-  let l = Loading_spinner.t () in
+  let l = Cordova_loading_spinner.t () in
   (* Some code *)
 
 let _ =
