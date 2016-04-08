@@ -1,8 +1,4 @@
-################################################################################
-MLI_FILE		= cordova_loading_spinner.mli
-## Name which will be used in -package with ocamlfind
-LIB_NAME		= cordova-plugin-loading-spinner
-################################################################################
+include Makefile.conf
 
 ################################################################################
 CC				= ocamlc
