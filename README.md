@@ -65,22 +65,3 @@ cordova plugin add https://github.com/mobimentum/phonegap-plugin-loading-spinner
 
 See the official documentation
 [cordova-plugin-loading-spinner](https://github.com/mobimentum/phonegap-plugin-loading-spinner)
-
-## ! BE CAREFUL !
-
-The device plugin creates a new object called *window.spinnerplugin*, but the object is
-available when the *deviceready* event is handled.
-
-Instead, we provide a function *Cordova_loading_spinner.t* of type unit ->
-Cordova_loading_spinner.loading_spinner which does the binding when you call it.
-So, use (with js_of_ocaml)
-
-```OCaml
-let on_device_ready _ =
-  let l = Cordova_loading_spinner.t () in
-  (* Some code *)
-
-let _ =
-  Dom.addEventListener Dom_html.document (Dom.Event.make "deviceready")
-  (Dom_html.handler on_device_ready) Js._false
-```
