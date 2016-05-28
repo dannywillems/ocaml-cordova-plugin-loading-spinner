@@ -24,10 +24,10 @@ class loading_spinner : Ojs.t ->
   object
     inherit Ojs.obj
     (* ---------------------------------------------------------------------- *)
-    (* show *)
-    method show       : unit
-    (* show_opt [options] *)
-    method show_opt   : options -> unit
+    (* show ?[options] *)
+    method show   : ?options:(options [@js.default create_options ()])  ->
+                    unit                                                ->
+                    unit
     (* ---------------------------------------------------------------------- *)
 
     (* ---------------------------------------------------------------------- *)
