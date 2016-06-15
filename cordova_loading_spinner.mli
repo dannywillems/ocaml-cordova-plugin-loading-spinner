@@ -1,43 +1,27 @@
 (* -------------------------------------------------------------------------- *)
-class options : Ojs.t ->
-  object
-    inherit Ojs.obj
-    method overlay           : bool
-    method timeout           : int
-    method fullscreen        : bool
-  end
-(* -------------------------------------------------------------------------- *)
+type options = private Ojs.t
 
-(* -------------------------------------------------------------------------- *)
-(* Abstract constructor for options. Don't use it. Use create_options instead *)
+(* Abstract constructor for options. *)
 val create_options :
-  ?overlay:(bool [@js.default true])      ->
-  ?timeout:(int [@js.default 0])          ->
-  ?fullscreen:(bool [@js.default false])  ->
-  unit                                    ->
+  ?overlay:(bool [@js.default true])                  ->
+  ?timeout:(int [@js.default 0])                      ->
+  ?fullscreen:(bool [@js.default false])              ->
+  unit                                                ->
   options
 [@@js.builder]
 (* -------------------------------------------------------------------------- *)
 
 (* -------------------------------------------------------------------------- *)
-class loading_spinner : Ojs.t ->
-  object
-    inherit Ojs.obj
-    (* ---------------------------------------------------------------------- *)
-    (* show ?[options] *)
-    method show   : ?options:(options [@js.default create_options ()])  ->
-                    unit                                                ->
-                    unit
-    (* ---------------------------------------------------------------------- *)
-
-    (* ---------------------------------------------------------------------- *)
-    (* hide *)
-    method hide       : unit
-    (* ---------------------------------------------------------------------- *)
-  end
+(* show ?[options] *)
+val show :
+  ?options:(options [@js.default create_options ()])  ->
+  unit                                                ->
+  unit
+[@@js.global "window.spinnerplugin.show"]
 (* -------------------------------------------------------------------------- *)
 
 (* -------------------------------------------------------------------------- *)
-val t : unit -> loading_spinner
-[@@js.get "window.spinnerplugin"]
+(* hide *)
+val hide : unit -> unit
+[@@js.global "window.spinnerplugin.hide"]
 (* -------------------------------------------------------------------------- *)
